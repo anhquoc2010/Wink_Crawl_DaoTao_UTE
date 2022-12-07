@@ -26,7 +26,7 @@ class CrawlNotiDaotaoUteSpider(scrapy.Spider):
 
         next_page = next_page[-1].css('a::attr(href)').get()
         print(next_page)
-        yield scrapy.Request(url='http://daotao.ute.udn.vn/'+next_page,callback=self.parse)
+        yield scrapy.Request(url='http://daotao.ute.udn.vn/'+next_page, callback=self.parse)
 
     def get_noti(self, response):
         noti_db = CrawlNotiDaotaoUteItem()
